@@ -1,0 +1,18 @@
+using UnityEngine;
+
+public class PlayerStates : MonoBehaviour
+{
+    public enum State
+    {
+        Idle,
+        Run,
+        Jump,
+        DoubleJump,
+        WallJump,
+        WallSlide,
+        Dash,
+        Crouch,
+        Ladders,
+        Ignore
+    }
+}
