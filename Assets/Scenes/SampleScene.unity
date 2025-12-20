@@ -119,6 +119,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &76532291
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 76532292}
+  m_Layer: 7
+  m_Name: LeftGroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &76532292
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76532291}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.414, y: -1.03, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1915567667}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &189361550
 GameObject:
   m_ObjectHideFlags: 0
@@ -9790,6 +9821,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &990456639
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 990456640}
+  m_Layer: 7
+  m_Name: 'RightGroundCheck '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &990456640
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990456639}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.253, y: -1.03, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1915567667}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1630315588
 GameObject:
   m_ObjectHideFlags: 0
@@ -9938,6 +10000,7 @@ GameObject:
   - component: {fileID: 1915567668}
   - component: {fileID: 1915567672}
   - component: {fileID: 1915567674}
+  - component: {fileID: 1915567675}
   - component: {fileID: 1915567673}
   - component: {fileID: 1915567665}
   - component: {fileID: 1915567664}
@@ -9983,8 +10046,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.10683274}
-  m_Size: {x: 0.8299999, y: 1.8936653}
+  m_Offset: {x: -0.035397053, y: -0.10683274}
+  m_Size: {x: 0.7592058, y: 1.8936653}
   m_Direction: 0
 --- !u!50 &1915567665
 Rigidbody2D:
@@ -10001,7 +10064,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 1.7
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -10077,10 +10140,12 @@ Transform:
   m_GameObject: {fileID: 1915567663}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.8039165, y: -3.7041438, z: 0}
+  m_LocalPosition: {x: 1.54, y: -4.89, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 76532292}
+  - {fileID: 990456640}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1915567668
@@ -10194,6 +10259,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1915567665}
+  groundRayDistance: 0.05
+  leftGroundPoint: {fileID: 76532292}
+  rightGroundPoint: {fileID: 990456640}
+  whatToDetect:
+    serializedVersion: 2
+    m_Bits: 64
+  grounded: 0
 --- !u!114 &1915567674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10209,6 +10281,24 @@ MonoBehaviour:
   thisAbilityState: 1
   isPermitted: 1
   speed: 5
+--- !u!114 &1915567675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915567663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4df9818a607a0d48a34ea1000f2a5ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisAbilityState: 2
+  isPermitted: 1
+  jumpActionRef: {fileID: 551817787131686132, guid: 1939ffe5cf0e21142bb43660c19c8e28, type: 3}
+  jumpForce: 10
+  airSpeed: 5
+  minimumAirtime: 0.2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

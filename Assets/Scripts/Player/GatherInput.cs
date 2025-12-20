@@ -16,24 +16,14 @@ public class GatherInput : MonoBehaviour
     public float horizontalInput;
 
 
-    void OnEnable()
+    private void OnEnable()
     {
-        jumpActionRef.action.performed += TryToJump;
-        jumpActionRef.action.canceled += StopJump;
+        
     }
-    void OnDisable()
+    private void OnDisable()
     {
-        jumpActionRef.action.performed -= TryToJump;
-        jumpActionRef.action.canceled -= StopJump;
+
         playerMap.Disable();
-    }
-    private void TryToJump(InputAction.CallbackContext value)
-    {
-        Debug.Log("Jump");
-    }
-    private void StopJump(InputAction.CallbackContext value)
-    {
-        Debug.Log("Stop jump");
     }
 
     void Start()
