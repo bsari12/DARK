@@ -46,7 +46,7 @@ public class WallJumpAbility : BaseAbility
         wallJumpMinimumTime -= Time.deltaTime;
         if(wallJumpMinimumTime<=0 && linkedPhysics.wallDetected)
         {
-            linkedStateMachine.ChangeState(PlayerStates.State.Jump);
+            linkedStateMachine.ChangeState(PlayerStates.State.WallSlide);
             wallJumpTimer = -1;
             return;
         }

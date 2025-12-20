@@ -42,6 +42,13 @@ public class JumpAbility : BaseAbility
         {
             linkedStateMachine.ChangeState(PlayerStates.State.Idle);
         }
+        if(!linkedPhysics.grounded && linkedPhysics.wallDetected)
+        {
+            if (linkedPhysics.rb.linearVelocityY < 0)
+            {
+                linkedStateMachine.ChangeState(PlayerStates.State.WallSlide);
+            }
+        }
     }
     public override void ProcessFixedAbility()
     {
