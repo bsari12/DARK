@@ -4,6 +4,9 @@ public class Player : MonoBehaviour
 {
     public GatherInput gatherInput;
     public StateMachine stateMachine;
+    public PhysicsControl physicsControl;
+
+    public Animator anim;
 
     private BaseAbility[] playerAbilities;
 
@@ -21,7 +24,9 @@ public class Player : MonoBehaviour
             {
                 ability.ProcessAbility();
             }
+            ability.UpdateAnimator();
         }
+        Debug.Log("Current state is: "+ stateMachine.currentState);
     }
     void FixedUpdate()
     {

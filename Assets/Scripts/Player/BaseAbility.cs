@@ -5,7 +5,8 @@ public class BaseAbility : MonoBehaviour
     protected Player player;
     protected GatherInput linkedInput;
     protected StateMachine linkedStateMachine;
-
+    protected PhysicsControl linkedPhysics;
+    protected Animator linkedAnimator;
 
 
 
@@ -14,7 +15,7 @@ public class BaseAbility : MonoBehaviour
 
     protected virtual void Start()
     {
-        
+        Initialization();
     }
     public virtual void EnterAbility()
     {
@@ -32,6 +33,10 @@ public class BaseAbility : MonoBehaviour
     {
         
     }
+    public virtual void UpdateAnimator()
+    {
+        
+    }
     protected virtual void Initialization()
     {
         player = GetComponent<Player>();
@@ -39,6 +44,8 @@ public class BaseAbility : MonoBehaviour
         {
             linkedInput =player.gatherInput;
             linkedStateMachine = player.stateMachine;
+            linkedPhysics = player.physicsControl;
+            linkedAnimator = player.anim;
         }
     }
 }

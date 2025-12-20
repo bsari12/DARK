@@ -11,8 +11,9 @@ public class GatherInput : MonoBehaviour
 
     public InputActionReference jumpActionRef;
     public InputActionReference moveActionRef;
-
-    private float horizontalInput;
+    
+    [HideInInspector]
+    public float horizontalInput;
 
 
     void OnEnable()
