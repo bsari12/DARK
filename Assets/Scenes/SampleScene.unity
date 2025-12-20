@@ -9937,6 +9937,8 @@ GameObject:
   - component: {fileID: 1915567669}
   - component: {fileID: 1915567668}
   - component: {fileID: 1915567672}
+  - component: {fileID: 1915567674}
+  - component: {fileID: 1915567673}
   - component: {fileID: 1915567665}
   - component: {fileID: 1915567664}
   - component: {fileID: 1915567671}
@@ -10010,7 +10012,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1915567666
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10096,6 +10098,7 @@ MonoBehaviour:
   playerInput: {fileID: 1915567669}
   jumpActionRef: {fileID: 551817787131686132, guid: 1939ffe5cf0e21142bb43660c19c8e28, type: 3}
   moveActionRef: {fileID: 493845369134579445, guid: 1939ffe5cf0e21142bb43660c19c8e28, type: 3}
+  horizontalInput: 0
 --- !u!114 &1915567669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10139,7 +10142,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gatherInput: {fileID: 1915567668}
+  physicsControl: {fileID: 1915567673}
   anim: {fileID: 1915567671}
+  facingRight: 1
 --- !u!95 &1915567671
 Animator:
   serializedVersion: 7
@@ -10176,6 +10181,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisAbilityState: 0
   isPermitted: 1
+--- !u!114 &1915567673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915567663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d1b6892792b0fe49809ea986ae7d162, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 1915567665}
+--- !u!114 &1915567674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915567663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a63381685b1dd84c8b8181aba8b60ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisAbilityState: 1
+  isPermitted: 1
+  speed: 5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

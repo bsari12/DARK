@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public Animator anim;
 
     private BaseAbility[] playerAbilities;
+    public bool facingRight = true;
 
     void Awake()
     {
@@ -37,5 +38,18 @@ public class Player : MonoBehaviour
                 ability.ProcessFixedAbility();
             }
         }    
+    }
+    public void Flip()
+    {
+        if(facingRight == true && gatherInput.horizontalInput < 0)
+        {
+            transform.Rotate(0,180,0);
+            facingRight = !facingRight;
+        }
+        else if(facingRight == false && gatherInput.horizontalInput > 0)
+        {
+            transform.Rotate(0, 180, 0);
+            facingRight = !facingRight;
+        }
     }
 }
