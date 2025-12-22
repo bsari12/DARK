@@ -11,6 +11,11 @@ public class MoveAbility : BaseAbility
         base.Initialization();
         runParameterID = Animator.StringToHash(runAnimParameterName);
     }
+    public override void EnterAbility()
+    {
+        player.Flip();
+    }
+
     public override void ProcessAbility()
     {
         if(linkedPhysics.grounded && linkedInput.horizontalInput == 0)

@@ -129,23 +129,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Example_Single_30x34_0
+      name: Player_Crouch_30x34_0
       rect:
         serializedVersion: 2
-        x: 7
+        x: 0
         y: 0
-        width: 23
-        height: 32
+        width: 30
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 66518a7c659768f90800000000000000
-      internalID: -6951735561175952026
+      spriteID: bdeb21742476c0e4089776af72431dcf
+      internalID: 217091394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Crouch_30x34_1
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 0
+        width: 30
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f628902a84ec1f247bd1056ff1751f57
+      internalID: 1658163047
       vertices: []
       indices: 
       edges: []
@@ -164,7 +186,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Example_Single_30x34_0: -6951735561175952026
+      Player_Crouch_30x34_0: 217091394
+      Player_Crouch_30x34_1: 1658163047
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

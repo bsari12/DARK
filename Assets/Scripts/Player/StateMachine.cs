@@ -22,10 +22,11 @@ public class StateMachine
 
         foreach(BaseAbility ability in arrayOfAbilities)
         {
-            if(ability.thisAbilityState == newState)
+            if(ability.thisAbilityState == currentState)
             {
                 ability.ExitAbility();
                 previousState = currentState;
+                break;
             }
         }
 
