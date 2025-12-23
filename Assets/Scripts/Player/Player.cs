@@ -7,7 +7,8 @@ public class Player : MonoBehaviour
     public PhysicsControl physicsControl;
 
     public Animator anim;
-
+    public PlayerStats playerStats;
+    
     private BaseAbility[] playerAbilities;
     public bool facingRight = true;
 

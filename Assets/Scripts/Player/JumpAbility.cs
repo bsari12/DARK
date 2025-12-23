@@ -62,7 +62,7 @@ public class JumpAbility : BaseAbility
     }
     private void TryToJump(InputAction.CallbackContext value)
     {
-        if (!isPermitted)
+        if (!isPermitted || linkedStateMachine.currentState == PlayerStates.State.KnockBack)
             return;
 
         if(linkedStateMachine.currentState == PlayerStates.State.Ladders)
@@ -81,13 +81,6 @@ public class JumpAbility : BaseAbility
             minimumAirtime = startMinimumAirTime;
             linkedPhysics.coyoteTimer = -1;
         }
-
-        //if (linkedPhysics.grounded)
-        //{
-        //    linkedStateMachine.ChangeState(PlayerStates.State.Jump);
-        //    linkedPhysics.rb.linearVelocity = new Vector2(airSpeed* linkedInput.horizontalInput, jumpForce); 
-        //    minimumAirtime = startMinimumAirTime;
-        //}
     }
     private void StopJump(InputAction.CallbackContext value)
     {

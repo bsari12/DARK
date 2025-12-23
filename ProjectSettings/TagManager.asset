@@ -16,8 +16,8 @@ TagManager:
   - Enemy
   - CameraEdge
   - Ladders
-  - 
-  - 
+  - PlayerStats
+  - DamagePlayer
   - 
   - 
   - 
