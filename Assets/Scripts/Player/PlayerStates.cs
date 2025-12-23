@@ -13,6 +13,8 @@ public class PlayerStates : MonoBehaviour
         Dash,
         Crouch,
         Ladders,
-        Ignore
+        Ignore,
+        KnockBack,
+        Death
     }
 }
