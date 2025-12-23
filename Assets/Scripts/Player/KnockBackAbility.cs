@@ -8,6 +8,7 @@ public class KnockBackAbility : BaseAbility
     public override void ExitAbility()
     {
         currentKnockBack = null;
+        linkedPhysics.ResetVelocity();
     }
     public void StartKnockBack(float duration, Vector2 force, Transform enemyObject)
     {
@@ -37,7 +38,7 @@ public class KnockBackAbility : BaseAbility
         }
         yield return new WaitForSeconds(duration);
 
-        if(player.playerStats.GetCurrentHealth() >0)
+        if(player.playerStats.GetCurrentHealth()>0)
         {
             if(linkedPhysics.grounded)
             {
