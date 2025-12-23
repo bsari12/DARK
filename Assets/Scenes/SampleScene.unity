@@ -13479,6 +13479,37 @@ MonoBehaviour:
     MaxWindowSize: 0
     Padding: 0
   m_LegacyMaxWindowSize: -2
+--- !u!1 &436106080
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 436106081}
+  m_Layer: 7
+  m_Name: CeilingCheckRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &436106081
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436106080}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.244, y: 0.146, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1915567667}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &444795134
 GameObject:
   m_ObjectHideFlags: 0
@@ -13835,6 +13866,37 @@ Transform:
   - {fileID: 189361551}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1779886680
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1779886681}
+  m_Layer: 7
+  m_Name: CeilingCheckLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1779886681
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779886680}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.381, y: 0.141, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1915567667}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1832117609
 GameObject:
   m_ObjectHideFlags: 0
@@ -13935,9 +13997,9 @@ GameObject:
   - component: {fileID: 1915567670}
   - component: {fileID: 1915567669}
   - component: {fileID: 1915567668}
+  - component: {fileID: 1915567682}
   - component: {fileID: 1915567672}
   - component: {fileID: 1915567674}
-  - component: {fileID: 1915567675}
   - component: {fileID: 1915567673}
   - component: {fileID: 1915567676}
   - component: {fileID: 1915567677}
@@ -14007,7 +14069,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1.7
+  m_GravityScale: 8
   m_Material: {fileID: 6200000, guid: 5524cf58dc04dc842a92bd283b12333f, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -14091,6 +14153,8 @@ Transform:
   - {fileID: 990456640}
   - {fileID: 121076679}
   - {fileID: 2080622862}
+  - {fileID: 436106081}
+  - {fileID: 1779886681}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1915567668
@@ -14206,6 +14270,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1915567665}
+  coyoteSetTime: 0.1
+  coyoteTimer: 0
   groundRayDistance: 0.05
   leftGroundPoint: {fileID: 76532292}
   rightGroundPoint: {fileID: 990456640}
@@ -14219,6 +14285,10 @@ MonoBehaviour:
   wallDetected: 0
   standColl: {fileID: 1915567664}
   crouchColl: {fileID: 1915567680}
+  ceilingRayDistance: 0.73
+  ceilingCheckPointLeft: {fileID: 1779886681}
+  ceilingCheckPointRight: {fileID: 436106081}
+  ceilingDetected: 0
 --- !u!114 &1915567674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14234,24 +14304,6 @@ MonoBehaviour:
   thisAbilityState: 1
   isPermitted: 1
   speed: 5
---- !u!114 &1915567675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1915567663}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4df9818a607a0d48a34ea1000f2a5ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisAbilityState: 2
-  isPermitted: 1
-  jumpActionRef: {fileID: 551817787131686132, guid: 1939ffe5cf0e21142bb43660c19c8e28, type: 3}
-  jumpForce: 10
-  airSpeed: 5
-  minimumAirtime: 0.2
 --- !u!114 &1915567676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14267,8 +14319,8 @@ MonoBehaviour:
   thisAbilityState: 4
   isPermitted: 1
   wallJumpActionRef: {fileID: 551817787131686132, guid: 1939ffe5cf0e21142bb43660c19c8e28, type: 3}
-  wallJumpForce: {x: 5, y: 8}
-  wallJumpMaxTime: 0.3
+  wallJumpForce: {x: 8, y: 19}
+  wallJumpMaxTime: 0.4
 --- !u!114 &1915567677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14371,6 +14423,27 @@ MonoBehaviour:
   thisAbilityState: 7
   isPermitted: 1
   crouchActionRef: {fileID: -2064827799563750316, guid: 1939ffe5cf0e21142bb43660c19c8e28, type: 3}
+  crouchSpeed: 2
+--- !u!114 &1915567682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915567663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa87cad89cc096e41aa15110fba14027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisAbilityState: 2
+  isPermitted: 1
+  jumpActionRef: {fileID: -2099379676528639254, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
+  jumpForce: 12
+  airSpeed: 6
+  minimumAirtime: 0.2
+  setMaxJumpTime: 0.2
+  gravityDivider: 2
 --- !u!1 &1954272988
 GameObject:
   m_ObjectHideFlags: 0
@@ -14434,7 +14507,7 @@ BoxCollider2D:
     drawMode: 2
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.6685715, y: 4.927041}
+  m_Size: {x: 0.8946905, y: 4.927041}
   m_EdgeRadius: 0
 --- !u!114 &1954272990
 MonoBehaviour:

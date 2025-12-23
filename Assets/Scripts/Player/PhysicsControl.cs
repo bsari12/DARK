@@ -4,6 +4,11 @@ public class PhysicsControl : MonoBehaviour
 {
     public Rigidbody2D rb;
 
+    [Header("Coyote Time")]
+    [SerializeField] private float coyoteSetTime;
+    public float coyoteTimer;
+
+
     [Header("Ground")]
     [SerializeField] private float groundRayDistance;
     [SerializeField] private Transform leftGroundPoint;
@@ -27,12 +32,41 @@ public class PhysicsControl : MonoBehaviour
     [SerializeField] private Collider2D standColl;
     [SerializeField] private Collider2D crouchColl;
 
+    [Header("Ceiling")]
+    [SerializeField] private float ceilingRayDistance;
+    [SerializeField] private Transform ceilingCheckPointLeft;
+    [SerializeField] private Transform ceilingCheckPointRight;
+    public bool ceilingDetected;
+    private RaycastHit2D hitInfoCeilingRight;
+    private RaycastHit2D hitInfoCeilingLeft;
+
+
+    public float GetGravity()
+    {
+        return gravityValue;
+    }
 
     void Start()
     {
         gravityValue = rb.gravityScale;
+        coyoteTimer = coyoteSetTime;
     }
 
+    void OnDrawGizmos()
+    {
+        Debug.DrawRay(ceilingCheckPointLeft.position, new Vector3(0,ceilingRayDistance,0),Color.red);
+        Debug.DrawRay(ceilingCheckPointRight.position, new Vector3(0,ceilingRayDistance,0),Color.red);
+    }
+
+    private bool CheckCeiling()
+    {
+        hitInfoCeilingLeft = Physics2D.Raycast(ceilingCheckPointLeft.position,transform.right,ceilingRayDistance, whatToDetect);
+        hitInfoCeilingRight = Physics2D.Raycast(ceilingCheckPointRight.position,transform.right,ceilingRayDistance, whatToDetect);
+        if(hitInfoCeilingLeft || hitInfoCeilingRight)
+            return true;
+
+        return false;
+    }
 
     private bool CheckWall()
     {
@@ -89,9 +123,21 @@ public class PhysicsControl : MonoBehaviour
         crouchColl.enabled = true;
     }
 
+    void Update()
+    {
+        if (!grounded)
+        {
+            coyoteTimer -= Time.deltaTime;
+        }
+        else
+        {
+            coyoteTimer = coyoteSetTime;
+        }
+    }
     void FixedUpdate()
     {
         grounded = CheckGround();
         wallDetected = CheckWall();
+        ceilingDetected = CheckCeiling();
     }
 }

@@ -37,7 +37,7 @@ public class DashAbility : BaseAbility
         if(!isPermitted)
             return;
         
-        if(linkedStateMachine.currentState == PlayerStates.State.Dash || linkedPhysics.wallDetected)
+        if(linkedStateMachine.currentState == PlayerStates.State.Dash || linkedPhysics.wallDetected || linkedStateMachine.currentState == PlayerStates.State.Crouch)
             return;
 
 
