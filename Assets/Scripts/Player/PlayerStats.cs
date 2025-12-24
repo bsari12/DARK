@@ -18,6 +18,10 @@ public class PlayerStats : MonoBehaviour
     private SpriteRenderer spriter;
     private bool canTakeDamage = true;
 
+    [Header("StatsColliders")]
+    [SerializeField] private Collider2D standingStatsCol;
+    [SerializeField] private Collider2D crouchStatsCol;
+    private Collider2D currentStatsCol;
 
     void Start()
     {
@@ -51,6 +55,28 @@ public class PlayerStats : MonoBehaviour
         if(currentHealth>0)
             canTakeDamage = true;
     }
+
+    public void EnableStatsStandCol()
+    {
+        if(currentHealth <=0)
+            return;
+        crouchStatsCol.enabled = false;
+        standingStatsCol.enabled = true;
+        currentStatsCol = standingStatsCol;
+
+    }
+
+    public void EnableStatsCrouchCol()
+    {
+        if(currentHealth <=0)
+            return;
+        crouchStatsCol.enabled = true;
+        standingStatsCol.enabled = false;
+        currentStatsCol = crouchStatsCol;
+
+    }
+
+
     public bool GetCanTakeDamage()
     {
         return canTakeDamage;

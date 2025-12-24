@@ -7,7 +7,7 @@ public class Spikes : MonoBehaviour
     [SerializeField] private float knockBackDuration;
     [SerializeField] private Vector2 knockBackForce;
 
-    void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         KnockBackAbility knockBackAbility = collision.GetComponentInParent<KnockBackAbility>();
         knockBackAbility.StartKnockBack(knockBackDuration, knockBackForce, transform);

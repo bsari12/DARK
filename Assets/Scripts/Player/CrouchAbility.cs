@@ -32,6 +32,7 @@ public class CrouchAbility : BaseAbility
     public override void EnterAbility()
     {
         linkedPhysics.CrouchColliders();
+        player.playerStats.EnableStatsCrouchCol();
     }
 
 
@@ -49,6 +50,7 @@ public class CrouchAbility : BaseAbility
     {
         wantToStop= false;
         linkedPhysics.StandColliders();
+        player.playerStats.EnableStatsStandCol();
 
     }
 
