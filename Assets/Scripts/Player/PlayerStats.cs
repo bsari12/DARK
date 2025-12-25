@@ -29,6 +29,7 @@ public class PlayerStats : MonoBehaviour
         healthBarControl.SetSliderValue(currentHealth, maxHealth);
         spriter = GetComponentInParent<SpriteRenderer>();
         defaultMaterial = spriter.material;
+        currentStatsCol = standingStatsCol;
     }
 
     public void DamagePlayer(float damage)
@@ -41,7 +42,7 @@ public class PlayerStats : MonoBehaviour
         if(currentHealth <= 0)
         {
             if(player.stateMachine.currentState != PlayerStates.State.KnockBack)
-                Debug.Log("Player is Dead");
+                player.stateMachine.ChangeState(PlayerStates.State.Death);
         }
     }
     private IEnumerator Flash()
@@ -75,7 +76,24 @@ public class PlayerStats : MonoBehaviour
         currentStatsCol = crouchStatsCol;
 
     }
+    public void EnableStatsCollider()
+    {
+        currentStatsCol.enabled = true;
+    }
 
+    public void DisableStatsCollider()
+    {
+        currentStatsCol.enabled = false;
+    }
+    public void DisableDamage()
+    {
+        canTakeDamage = false;
+    }
+
+    public void EnableDamage()
+    {
+        canTakeDamage = true;
+    }
 
     public bool GetCanTakeDamage()
     {
