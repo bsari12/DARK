@@ -8,7 +8,11 @@ public class Gate : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            Debug.Log("Load Next Level");
+            Player player = collision.GetComponent<Player>();
+            player.gatherInput.DisablePlayerMap();
+            player.physicsControl.ResetVelocity();
+            LevelManager.instance.LoadLevelString(levelToLoad);
+            GetComponent<Collider2D>().enabled = false;
         }
     }
 
