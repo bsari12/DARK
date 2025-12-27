@@ -7,3 +7,48 @@ public class ExampleData
 	public string exampleString;
 
 }
+[System.Serializable]
+
+public class SpawnData
+{
+	public string spawnPointKey;
+	public bool facingRight;
+
+	public SpawnData()
+	{
+		spawnPointKey = "Start";
+		facingRight = true;
+	}
+
+}
+[System.Serializable]
+public class CheckpointData
+{
+	public string sceneToLoad;
+	public string checkPointKey;
+	public bool facingRight;
+	public CheckpointData()
+	{
+		sceneToLoad = "Level 1";
+		checkPointKey = "Check1";
+		facingRight = true;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

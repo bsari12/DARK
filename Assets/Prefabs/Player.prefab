@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 907dada19b41a2d4f9ba5c4325f3dba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 2
   player: {fileID: 2100567674786411706}
   healthBarControl: {fileID: 0}
   flashDuration: 0.2
@@ -231,6 +231,7 @@ GameObject:
   - component: {fileID: 156569966679342608}
   - component: {fileID: 1808406141823678782}
   - component: {fileID: 2178468290839109303}
+  - component: {fileID: 8894505555207095673}
   - component: {fileID: 707316999246265373}
   - component: {fileID: 8547624009997690301}
   - component: {fileID: 8896199675704780511}
@@ -545,6 +546,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thisAbilityState: 10
   isPermitted: 1
+--- !u!114 &8894505555207095673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6935024866629159082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92c0b8be7e5aca74b9ec0dab60618380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActivateCheck: {fileID: -586204154490302743, guid: 1939ffe5cf0e21142bb43660c19c8e28, type: 3}
+  checkPoint: {fileID: 0}
 --- !u!114 &707316999246265373
 MonoBehaviour:
   m_ObjectHideFlags: 0
