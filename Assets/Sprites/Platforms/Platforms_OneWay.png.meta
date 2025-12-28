@@ -126,23 +126,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Example_Single_30x34_0
+      name: Platforms_OneWay_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 0
-        width: 23
-        height: 32
+        x: 0
+        y: 6
+        width: 32
+        height: 3
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 66518a7c659768f90800000000000000
-      internalID: -6951735561175952026
+      spriteID: 31bb5cdc56559bb49a7ee352c3c820ac
+      internalID: 1215807195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Platforms_OneWay_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 3
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae541a57a423a6940b3410560223977a
+      internalID: -234673416
       vertices: []
       indices: 
       edges: []
@@ -161,7 +183,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Example_Single_30x34_0: -6951735561175952026
+      Platforms_OneWay_0: 1215807195
+      Platforms_OneWay_1: -234673416
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

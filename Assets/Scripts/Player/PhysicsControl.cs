@@ -8,6 +8,9 @@ public class PhysicsControl : MonoBehaviour
     [SerializeField] private float coyoteSetTime;
     public float coyoteTimer;
 
+    [Header("Interpolation")]
+    public RigidbodyInterpolation2D interpolate;
+    public RigidbodyInterpolation2D	extrapolate;
 
     [Header("Ground")]
     [SerializeField] private float groundRayDistance;
@@ -139,5 +142,14 @@ public class PhysicsControl : MonoBehaviour
         grounded = CheckGround();
         wallDetected = CheckWall();
         ceilingDetected = CheckCeiling();
+    }
+    public void SetInterpolate()
+    {
+        rb.interpolation = interpolate;
+    }
+
+    public void SetExtrapolate()
+    {
+        rb.interpolation = extrapolate;
     }
 }

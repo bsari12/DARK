@@ -10,10 +10,7 @@ public class DeathAbility : BaseAbility
         linkedPhysics.ResetVelocity();
         if(linkedPhysics.grounded)
             linkedAnimator.SetBool("Death", true);
-        else
-        {
-            // air death animation
-        }
+        Invoke(nameof(ResetGame), 2f);
     }
 
 

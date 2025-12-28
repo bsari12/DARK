@@ -26,7 +26,6 @@ public class SpawnControl : MonoBehaviour
         }
         if(SpawnMode.spawnFromCheckPoint == true && canLoadFromCheckpoint == true)
         {
-            SaveLoadManager.instance.Load(checkData, SaveLoadManager.instance.folderName, SaveLoadManager.instance.fileCheckPoint);
             SaveLoadManager.instance.Load(spawnData, SaveLoadManager.instance.folderName, SaveLoadManager.instance.fileName);
             foreach(SpawnIdentifier spawnID in spawnCheckPoints)
             {

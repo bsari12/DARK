@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: d161c6c8187ed874b97914ab2e68a16f
+guid: bec3bbc669b49514f865d9cdce905e4d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1641875271210828124
-    second: Level_3_Background_1_0
-  - first:
-      213: -8332461255767472608
-    second: Level_3_Background_1_1
+      213: 6932128433046955267
+    second: MinimapColors_16x16_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -129,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Level_3_Background_1_0
+      name: MinimapColors_16x16_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 51
-        width: 58
-        height: 59
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,30 +141,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c5105023cdc19c610800000000000000
-      internalID: 1641875271210828124
+      spriteID: 3052625f41ed33060800000000000000
+      internalID: 6932128433046955267
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Level_3_Background_1_1
+      name: MinimapColors_16x16_1
       rect:
         serializedVersion: 2
-        x: 134
+        x: 16
         y: 0
-        width: 346
-        height: 288
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 026464992a62d5c80800000000000000
-      internalID: -8332461255767472608
+      spriteID: 0336050b2a495e747b9d3776065635cc
+      internalID: 2049366681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MinimapColors_16x16_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68c64f059795324479d60acd6b53fcf4
+      internalID: 118416154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MinimapColors_16x16_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03895d5495e118a43ad4a3f882ace0c7
+      internalID: -1107244138
       vertices: []
       indices: 
       edges: []
@@ -176,7 +217,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 4e3726fbbbd246e4780e6828191ed3e6
     internalID: 0
     vertices: []
     indices: 
@@ -186,8 +227,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Level_3_Background_1_0: 1641875271210828124
-      Level_3_Background_1_1: -8332461255767472608
+      MinimapColors_16x16_0: 6932128433046955267
+      MinimapColors_16x16_1: 2049366681
+      MinimapColors_16x16_2: 118416154
+      MinimapColors_16x16_3: -1107244138
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

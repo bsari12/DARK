@@ -466,6 +466,8 @@ MonoBehaviour:
   rb: {fileID: 8896199675704780511}
   coyoteSetTime: 0.1
   coyoteTimer: 0
+  interpolate: 1
+  extrapolate: 2
   groundRayDistance: 0.05
   leftGroundPoint: {fileID: 83227798434523221}
   rightGroundPoint: {fileID: 535365486836736682}
@@ -606,7 +608,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 100000
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 8
