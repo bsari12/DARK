@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5449403388787643875}
   - component: {fileID: 4476045238783715157}
+  - component: {fileID: 566618167293507558}
   - component: {fileID: 3638626909096403972}
   - component: {fileID: -5349726136476294556}
   m_Layer: 0
@@ -80,6 +81,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &566618167293507558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740791885836725072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8f554d621a6b14aa4464dcc3b3a6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapKey: L1
 --- !u!114 &3638626909096403972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,6 +107,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelToLoad: Level 2
+  spawnDataForOtherLevel:
+    spawnPointKey: 
+    facingRight: 0
 --- !u!50 &-5349726136476294556
 Rigidbody2D:
   serializedVersion: 5

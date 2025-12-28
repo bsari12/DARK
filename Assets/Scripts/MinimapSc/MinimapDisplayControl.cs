@@ -34,6 +34,7 @@ public class MinimapDisplayControl : MonoBehaviour
                 if(mapID.mapKey == firstMinimapToReveal)
                 {
                     mapID.gameObject.SetActive(true);
+                    minimapData.AddToListWithCheck(firstMinimapToReveal);
                     break;
                 }
             }

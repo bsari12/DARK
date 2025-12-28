@@ -14284,6 +14284,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 566618167293507558, guid: 97412caf1f3b60e4882ff769504637d6, type: 3}
+      propertyPath: mapKey
+      value: L3
+      objectReference: {fileID: 0}
     - target: {fileID: 740791885836725072, guid: 97412caf1f3b60e4882ff769504637d6, type: 3}
       propertyPath: m_Name
       value: GateRight
@@ -14636,7 +14640,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.8541665
+  orthographic size: 4.375
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
