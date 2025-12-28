@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 [System.Serializable]
 
 
@@ -34,9 +36,21 @@ public class CheckpointData
 		facingRight = true;
 	}
 }
+[System.Serializable]
 
+public class MinimapData
+{
+	public List<string> mapKeys = new List <string>();
 
+	public void AddToListWithCheck(string keyToAdd)
+	{
+		if(mapKeys.Contains(keyToAdd))
+			return;
+		
+		mapKeys.Add(keyToAdd);
+	}
 
+}
 
 
 
