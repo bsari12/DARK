@@ -45,12 +45,17 @@ public class Shooting : MonoBehaviour
     }
     private void TryToShoot(InputAction.CallbackContext value)
     {
-        if(currentWeapon == null || player.stateMachine.currentState==PlayerStates.State.Ladders || player.stateMachine.currentState == PlayerStates.State.Dash || player.stateMachine.currentState == PlayerStates.State.WallSlide)
+        if(currentWeapon == null || player.stateMachine.currentState==PlayerStates.State.Ladders || player.stateMachine.currentState ==   PlayerStates.State.Dash || player.stateMachine.currentState == PlayerStates.State.WallSlide || player.stateMachine.currentState == PlayerStates.State.KnockBack)
             return;
 
-        if(currentWeapon.currentAmmo <= 0 || shootButtonHeld || shootCooldownOver == false)
+        if(shootButtonHeld || shootCooldownOver == false)
             return;
-
+        
+        if (currentWeapon.isAutomatic)
+        {
+            shootButtonHeld = true;
+            return;
+        }
         shootButtonHeld = true;
         Shoot();
     }
@@ -61,6 +66,8 @@ public class Shooting : MonoBehaviour
 
     private void Shoot()
     {
+        if(currentWeapon.currentAmmo<=0)
+            return;
         lineRenderer.positionCount = 2;
         Vector3 direction = currentWeapon.shootingPoints.right;
         RaycastHit2D hitInfo = Physics2D.Raycast(currentWeapon.shootingPoints.position,direction,Mathf.Infinity,whatToHit);
@@ -100,6 +107,10 @@ public class Shooting : MonoBehaviour
     }
     void Update()
     {
+        if(shootButtonHeld && currentWeapon.isAutomatic && shootCooldownOver)
+        {            
+            Shoot();
+        }
         if(isShootingLineActive)
         {
             lineRenderer.SetPosition(0,currentWeapon.shootingPoints.position);
