@@ -138,9 +138,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1607898867
+  m_SortingLayer: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 5c29ec8e11cb9b2408fcfe7c8612da2d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -168,10 +168,11 @@ MonoBehaviour:
   itemType: 0
   damage: 1
   shootCooldown: 0.1
-  isAutomatic: 0
-  currentAmmo: 10
+  isAutomatic: 1
+  currentAmmo: 100
   maxAmmo: 10
   storageAmmo: 15
   shootingPoints: {fileID: 124373315569852633}
   shellSpawnPoints: {fileID: 4236305047918972311}
   shellPrefab: {fileID: 0}
+  visibleLineTime: 0.08

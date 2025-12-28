@@ -36,12 +36,12 @@ public class Shooting : MonoBehaviour
     void OnEnable()
     {
         shootActionRef.action.performed += TryToShoot;
-        shootActionRef.action.performed += StopShooting;
+        shootActionRef.action.canceled += StopShooting;
     }
     void OnDisable()
     {
         shootActionRef.action.performed -= TryToShoot;
-        shootActionRef.action.performed -= StopShooting;
+        shootActionRef.action.canceled -= StopShooting;
     }
     private void TryToShoot(InputAction.CallbackContext value)
     {
