@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6861335312230771631}
   - component: {fileID: 7711357247773655010}
+  - component: {fileID: 7970712925135709114}
   m_Layer: 13
   m_Name: Grid - Minimap
   m_TagString: Untagged
@@ -47,6 +48,25 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &7970712925135709114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913844908368176289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f87f0e6e8c14e446aedf38ba62ee927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstMinimapToReveal: L1
+  minimapIDs:
+  - {fileID: 5163218869724704909}
+  - {fileID: 4638695632629552987}
+  - {fileID: 2328565783419435553}
+  minimapData:
+    mapKeys: []
 --- !u!1 &3953792939199339175
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,6 +76,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8744018763646804505}
+  - component: {fileID: 2328565783419435553}
   - component: {fileID: 2275596896361874341}
   - component: {fileID: 3256720953607965094}
   m_Layer: 13
@@ -64,7 +85,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8744018763646804505
 Transform:
   m_ObjectHideFlags: 0
@@ -80,6 +101,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6861335312230771631}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2328565783419435553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3953792939199339175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0febf6ff588512f44bd1587049ba9286, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapKey: L3
 --- !u!1839735485 &2275596896361874341
 Tilemap:
   m_ObjectHideFlags: 0
@@ -3397,6 +3431,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2836842478858928230}
+  - component: {fileID: 4638695632629552987}
   - component: {fileID: 6156643519921678615}
   - component: {fileID: 2974359592565742132}
   m_Layer: 13
@@ -3405,7 +3440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2836842478858928230
 Transform:
   m_ObjectHideFlags: 0
@@ -3421,6 +3456,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6861335312230771631}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4638695632629552987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7304700888660475205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0febf6ff588512f44bd1587049ba9286, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapKey: L2
 --- !u!1839735485 &6156643519921678615
 Tilemap:
   m_ObjectHideFlags: 0
@@ -6778,6 +6826,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7753763912281953292}
+  - component: {fileID: 5163218869724704909}
   - component: {fileID: 6736739246940359931}
   - component: {fileID: 4778257032123241541}
   m_Layer: 13
@@ -6786,7 +6835,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7753763912281953292
 Transform:
   m_ObjectHideFlags: 0
@@ -6802,6 +6851,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6861335312230771631}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5163218869724704909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7812581514551510479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0febf6ff588512f44bd1587049ba9286, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapKey: L1
 --- !u!1839735485 &6736739246940359931
 Tilemap:
   m_ObjectHideFlags: 0
