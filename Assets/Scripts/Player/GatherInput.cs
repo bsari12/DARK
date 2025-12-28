@@ -18,6 +18,8 @@ public class GatherInput : MonoBehaviour
     [HideInInspector]
     public float verticalInput;
 
+    private InputActionMap miniMap;
+    private InputActionMap activatorMap;
 
     private void OnEnable()
     {
@@ -33,7 +35,10 @@ public class GatherInput : MonoBehaviour
     {
         playerMap = playerInput.actions.FindActionMap("Player");
         uiMap = playerInput.actions.FindActionMap("UI");
+        miniMap = playerInput.actions.FindActionMap("MinimapControls");
+        activatorMap = playerInput.actions.FindActionMap("Activators");
         playerMap.Enable();
+        activatorMap.Enable();
     }
 
     // Update is called once per frame
@@ -42,6 +47,19 @@ public class GatherInput : MonoBehaviour
         horizontalInput = moveActionRef.action.ReadValue<float>();
         verticalInput = verticalActionRef.action.ReadValue<float>();
         Debug.Log("Horizontal Input: "+ horizontalInput);
+    }
+    public void EnableMinimap()
+    {
+        miniMap.Enable();
+    }
+
+    public void DisableMinimap()
+    {
+        miniMap.Disable();
+    }
+    public void EnablePlayerMap()
+    {
+        playerMap.Enable();
     }
 
     public void DisablePlayerMap()

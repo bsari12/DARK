@@ -234,6 +234,7 @@ GameObject:
   - component: {fileID: 8894505555207095673}
   - component: {fileID: 707316999246265373}
   - component: {fileID: 8547624009997690301}
+  - component: {fileID: 6729954562532057479}
   - component: {fileID: 8896199675704780511}
   - component: {fileID: 2148785402953102394}
   - component: {fileID: 2846374015433630439}
@@ -366,7 +367,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 
+  m_DefaultActionMap: MinimapControls
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &1036435708861347739
@@ -596,6 +597,20 @@ MonoBehaviour:
   isPermitted: 1
   crouchActionRef: {fileID: -2064827799563750316, guid: 1939ffe5cf0e21142bb43660c19c8e28, type: 3}
   crouchSpeed: 2
+--- !u!114 &6729954562532057479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6935024866629159082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 740444a8c236e9f48be968cb5d4f67d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  miniMapActivatorRef: {fileID: 9037355382103833589, guid: 1939ffe5cf0e21142bb43660c19c8e28, type: 3}
+  minimapCanvasGroup: {fileID: 0}
 --- !u!50 &8896199675704780511
 Rigidbody2D:
   serializedVersion: 5
