@@ -80,6 +80,14 @@ public class Shooting : MonoBehaviour
             endPoint = hitInfo.point;
             //lineRenderer.SetPosition(0,startPoint);
             //lineRenderer.SetPosition(1, endPoint);
+
+            // hitInfo.collider.GetComponent<Clone>();
+            IDamageable damageableObject = hitInfo.collider.GetComponent<IDamageable>();
+            if(damageableObject != null)
+            {
+                damageableObject.TakeDamage(currentWeapon.damage);
+            }
+
             Debug.Log("We hit something");
         }
         else
