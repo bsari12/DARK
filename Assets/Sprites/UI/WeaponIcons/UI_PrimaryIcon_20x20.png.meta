@@ -1,16 +1,19 @@
 fileFormatVersion: 2
-guid: 170612ceae5914d47ae8ad4042547707
+guid: 3ba62af55c4254245a17d1ac7be40267
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8627226160112593364
-    second: UI_Frames_32x12_0
+      213: -6683278251990477859
+    second: UI_PrimaryIcon_20x20_0
   - first:
-      213: 3694825829583351386
-    second: UI_Frames_32x12_1
+      213: 5703387910114513885
+    second: UI_PrimaryIcon_20x20_1
   - first:
-      213: 4900816463175144924
-    second: UI_Frames_32x12_2
+      213: 4967113926678960096
+    second: UI_PrimaryIcon_20x20_2
+  - first:
+      213: 2792980086673644569
+    second: UI_PrimaryIcon_20x20_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -43,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -57,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -132,57 +135,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_Frames_32x12_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 23
-        width: 32
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4d9e77ecb701ab770800000000000000
-      internalID: 8627226160112593364
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_Frames_32x12_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 12
-        width: 32
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a5ee0471488a64330800000000000000
-      internalID: 3694825829583351386
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_Frames_32x12_2
+      name: UI_PrimaryIcon_20x20_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 13
+        width: 20
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,8 +150,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cd5d0fc8b92330440800000000000000
-      internalID: 4900816463175144924
+      spriteID: dd3930fd6d93043a0800000000000000
+      internalID: -6683278251990477859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PrimaryIcon_20x20_1
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 0
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd312ae1611862f40800000000000000
+      internalID: 5703387910114513885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PrimaryIcon_20x20_2
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e75896accbbee440800000000000000
+      internalID: 4967113926678960096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_PrimaryIcon_20x20_3
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91c1cea4798a2c620800000000000000
+      internalID: 2792980086673644569
       vertices: []
       indices: 
       edges: []
@@ -201,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 84976b94e5f27384cb1442e999f77207
     internalID: 0
     vertices: []
     indices: 
@@ -211,9 +236,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      UI_Frames_32x12_0: 8627226160112593364
-      UI_Frames_32x12_1: 3694825829583351386
-      UI_Frames_32x12_2: 4900816463175144924
+      UI_PrimaryIcon_20x20_0: -6683278251990477859
+      UI_PrimaryIcon_20x20_1: 5703387910114513885
+      UI_PrimaryIcon_20x20_2: 4967113926678960096
+      UI_PrimaryIcon_20x20_3: 2792980086673644569
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

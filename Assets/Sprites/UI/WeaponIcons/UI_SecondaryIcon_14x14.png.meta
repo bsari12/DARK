@@ -1,16 +1,19 @@
 fileFormatVersion: 2
-guid: 170612ceae5914d47ae8ad4042547707
+guid: 6eaaac8ef9930aa46853ff3d338f259d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8627226160112593364
-    second: UI_Frames_32x12_0
+      213: -1849168584006432866
+    second: UI_SecondaryIcon_14x14_0
   - first:
-      213: 3694825829583351386
-    second: UI_Frames_32x12_1
+      213: 6655778773207784999
+    second: UI_SecondaryIcon_14x14_1
   - first:
-      213: 4900816463175144924
-    second: UI_Frames_32x12_2
+      213: 4000691834331604973
+    second: UI_SecondaryIcon_14x14_2
+  - first:
+      213: 2233459754384975605
+    second: UI_SecondaryIcon_14x14_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -43,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -57,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -132,57 +135,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_Frames_32x12_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 23
-        width: 32
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4d9e77ecb701ab770800000000000000
-      internalID: 8627226160112593364
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_Frames_32x12_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 12
-        width: 32
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a5ee0471488a64330800000000000000
-      internalID: 3694825829583351386
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_Frames_32x12_2
+      name: UI_SecondaryIcon_14x14_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 13
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,8 +150,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cd5d0fc8b92330440800000000000000
-      internalID: 4900816463175144924
+      spriteID: e970c7c58fe6656e0800000000000000
+      internalID: -1849168584006432866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SecondaryIcon_14x14_1
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 0
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72e92a8c7831e5c50800000000000000
+      internalID: 6655778773207784999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SecondaryIcon_14x14_2
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 0
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de72429d600558730800000000000000
+      internalID: 4000691834331604973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_SecondaryIcon_14x14_3
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 0
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f66f3030d7defe10800000000000000
+      internalID: 2233459754384975605
       vertices: []
       indices: 
       edges: []
@@ -201,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d8d175ac5448f744e8267ec0bac974d3
     internalID: 0
     vertices: []
     indices: 
@@ -211,9 +236,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      UI_Frames_32x12_0: 8627226160112593364
-      UI_Frames_32x12_1: 3694825829583351386
-      UI_Frames_32x12_2: 4900816463175144924
+      UI_SecondaryIcon_14x14_0: -1849168584006432866
+      UI_SecondaryIcon_14x14_1: 6655778773207784999
+      UI_SecondaryIcon_14x14_2: 4000691834331604973
+      UI_SecondaryIcon_14x14_3: 2233459754384975605
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

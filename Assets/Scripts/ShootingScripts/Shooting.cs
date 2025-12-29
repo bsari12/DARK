@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -20,7 +21,8 @@ public class Shooting : MonoBehaviour
     private Vector3 startPoint;
     private Vector3 endPoint;
 
-
+    public static Action<Sprite, int,int,int> OnUpdateAllInfo;
+    public static Action <int,int,int> OnUpdateAmmo;
 
 
     void Awake()
@@ -31,6 +33,7 @@ public class Shooting : MonoBehaviour
     void Start()
     {
         currentWeapon = player.currentWeaponPrefab.GetComponent<Weapon>();
+        OnUpdateAllInfo?.Invoke(currentWeapon.weaponIconSprite,currentWeapon.currentAmmo, currentWeapon.maxAmmo, currentWeapon.storageAmmo);
     }
 
     void OnEnable()
@@ -90,6 +93,7 @@ public class Shooting : MonoBehaviour
         currentWeapon.currentAmmo -=1;
         StartCoroutine(ShootDelay());
         StartCoroutine(ResetShootLine());
+        OnUpdateAmmo?.Invoke(currentWeapon.currentAmmo, currentWeapon.maxAmmo, currentWeapon.storageAmmo);
     }
 
     private IEnumerator ShootDelay()

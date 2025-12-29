@@ -1,16 +1,22 @@
 fileFormatVersion: 2
-guid: 170612ceae5914d47ae8ad4042547707
+guid: 4bfa93c3cd3ade84ab46d0fc2c502b33
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8627226160112593364
-    second: UI_Frames_32x12_0
+      213: -8596457216348987887
+    second: Potions_White_14x14_0
   - first:
-      213: 3694825829583351386
-    second: UI_Frames_32x12_1
+      213: -8251575542893258043
+    second: Potions_White_14x14_1
   - first:
-      213: 4900816463175144924
-    second: UI_Frames_32x12_2
+      213: 4020929252009047416
+    second: Potions_White_14x14_2
+  - first:
+      213: -1385137569204759423
+    second: Potions_White_14x14_3
+  - first:
+      213: -8761045690052914645
+    second: Potions_White_14x14_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -132,34 +138,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_Frames_32x12_0
+      name: Potions_White_14x14_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 23
-        width: 32
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4d9e77ecb701ab770800000000000000
-      internalID: 8627226160112593364
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_Frames_32x12_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 12
-        width: 32
+        x: 2
+        y: 1
+        width: 10
         height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -169,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a5ee0471488a64330800000000000000
-      internalID: 3694825829583351386
+      spriteID: 11edcac25bf33b880800000000000000
+      internalID: -8596457216348987887
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_Frames_32x12_2
+      name: Potions_White_14x14_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 13
+        x: 16
+        y: 1
+        width: 10
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,8 +175,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cd5d0fc8b92330440800000000000000
-      internalID: 4900816463175144924
+      spriteID: 5cadb8033c38c7d80800000000000000
+      internalID: -8251575542893258043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potions_White_14x14_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 875f9f4d9d53dc730800000000000000
+      internalID: 4020929252009047416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potions_White_14x14_3
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 2
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 184908638b007cce0800000000000000
+      internalID: -1385137569204759423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Potions_White_14x14_4
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 2
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b22dd67ec538a6680800000000000000
+      internalID: -8761045690052914645
       vertices: []
       indices: 
       edges: []
@@ -211,9 +261,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      UI_Frames_32x12_0: 8627226160112593364
-      UI_Frames_32x12_1: 3694825829583351386
-      UI_Frames_32x12_2: 4900816463175144924
+      Potions_White_14x14_0: -8596457216348987887
+      Potions_White_14x14_1: -8251575542893258043
+      Potions_White_14x14_2: 4020929252009047416
+      Potions_White_14x14_3: -1385137569204759423
+      Potions_White_14x14_4: -8761045690052914645
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
