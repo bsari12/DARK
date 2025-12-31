@@ -6,6 +6,7 @@ public class ShootUpAbility : BaseAbility
     public InputActionReference shootUpRef;
     private Weapon currentWeapon;
     private bool shootUpActivated;
+    public float airSpeed;
 
     void OnEnable()
     {
@@ -22,7 +23,23 @@ public class ShootUpAbility : BaseAbility
         base.Initialization();
         currentWeapon = player.currentWeaponPrefab.GetComponent<Weapon>();
     }
-
+    public override void EnterAbility()
+    {
+        currentWeapon = player.currentWeaponPrefab.GetComponent<Weapon>();
+        player.setUpShootPos();
+    }
+    public override void ExitAbility()
+    {
+        shootUpActivated = false;
+        player.SetStandShootPos();
+    }
+    public override void ProcessAbility()
+    {
+        if(!linkedPhysics.grounded)
+        linkedPhysics.rb.linearVelocity = new Vector2(linkedInput.horizontalInput*airSpeed, linkedPhysics.rb.linearVelocityY);
+        else   
+            linkedPhysics.rb.linearVelocity = Vector2.zero;
+    }
     private void TryToShootUp(InputAction.CallbackContext value)
     {
         if(!isPermitted || currentWeapon == null)
@@ -62,5 +79,10 @@ public class ShootUpAbility : BaseAbility
         }
         shootUpActivated = false;
 
+    }
+
+    public override void UpdateAnimator()
+    {
+        linkedAnimator.SetBool("ShootUp", linkedStateMachine.currentState == PlayerStates. State.ShootUp);
     }
 }
