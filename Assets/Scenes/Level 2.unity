@@ -14640,7 +14640,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.375
+  orthographic size: 4.21875
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -14665,7 +14665,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.4428406, y: -2.5439987, z: -10}
+  m_LocalPosition: {x: -5.438631, y: -2.5439987, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15783,6 +15783,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlatformsOneWay (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4053691320749753224, guid: 4b286ad45060f4a4fabca2ce8e04d109, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6308808180977888800, guid: 4b286ad45060f4a4fabca2ce8e04d109, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.999521
@@ -16589,6 +16593,10 @@ PrefabInstance:
     - target: {fileID: 4053691320749753224, guid: 4b286ad45060f4a4fabca2ce8e04d109, type: 3}
       propertyPath: m_Name
       value: PlatformsOneWay
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053691320749753224, guid: 4b286ad45060f4a4fabca2ce8e04d109, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6308808180977888800, guid: 4b286ad45060f4a4fabca2ce8e04d109, type: 3}
       propertyPath: m_LocalPosition.x

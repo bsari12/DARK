@@ -26,7 +26,7 @@ public class ShootUpAbility : BaseAbility
     public override void EnterAbility()
     {
         currentWeapon = player.currentWeaponPrefab.GetComponent<Weapon>();
-        player.setUpShootPos();
+        player.SetUpShootPos();
     }
     public override void ExitAbility()
     {
@@ -36,7 +36,7 @@ public class ShootUpAbility : BaseAbility
     public override void ProcessAbility()
     {
         if(!linkedPhysics.grounded)
-        linkedPhysics.rb.linearVelocity = new Vector2(linkedInput.horizontalInput*airSpeed, linkedPhysics.rb.linearVelocityY);
+            linkedPhysics.rb.linearVelocity = new Vector2(linkedInput.horizontalInput*airSpeed, linkedPhysics.rb.linearVelocityY);
         else   
             linkedPhysics.rb.linearVelocity = Vector2.zero;
     }
@@ -44,22 +44,26 @@ public class ShootUpAbility : BaseAbility
     {
         if(!isPermitted || currentWeapon == null)
             return;
+
         if(linkedStateMachine.currentState == PlayerStates.State.Ladders || linkedStateMachine.currentState == PlayerStates.State.Dash
         || linkedStateMachine.currentState == PlayerStates.State.WallJump
         || linkedStateMachine.currentState == PlayerStates.State.WallSlide
         || linkedStateMachine.currentState == PlayerStates.State.Crouch
         || linkedStateMachine.currentState == PlayerStates.State.Reload
-        || linkedStateMachine.currentState == PlayerStates.State.KnockBack)
+        || linkedStateMachine.currentState == PlayerStates.State.KnockBack
+        || linkedStateMachine.currentState == PlayerStates.State.Death)
             return;
+
         linkedStateMachine.ChangeState(PlayerStates.State.ShootUp);
         shootUpActivated = true;
+
         if(linkedPhysics.grounded)
             linkedPhysics.ResetVelocity();
     }
 
     private void StopShootUp(InputAction.CallbackContext value)
     {
-        if(shootUpActivated == false)
+        if(shootUpActivated == false || linkedStateMachine.currentState == PlayerStates.State.Death)
             return;
         
         if(linkedPhysics.grounded)

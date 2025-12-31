@@ -109,7 +109,7 @@ public class Player : MonoBehaviour
     {
         currentWeaponPrefab.transform.localEulerAngles = new Vector3(0,0,zRotation);
     }
-    public void setUpShootPos()
+    public void SetUpShootPos()
     {
         if(currentWeaponType == ItemType.PrimaryWeapon)
         {
