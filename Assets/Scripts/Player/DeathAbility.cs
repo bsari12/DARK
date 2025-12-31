@@ -11,9 +11,13 @@ public class DeathAbility : BaseAbility
         if(linkedPhysics.grounded)
             linkedAnimator.SetBool("Death", true);
         Invoke(nameof(ResetGame), 2f);
+        player.DeactivateCurrentWeapon();
     }
 
-
+    public override void ExitAbility()
+    {
+        player.ActivateCurrentWeapon();
+    }
 
     public void ResetGame()
     {

@@ -92,5 +92,12 @@ public class Player : MonoBehaviour
         }
     }
 
-    
+    public void DeactivateCurrentWeapon()
+    {
+        currentWeaponPrefab.SetActive(false);
+    }
+    public void ActivateCurrentWeapon()
+    {
+        currentWeaponPrefab.SetActive(true);
+    }
 }

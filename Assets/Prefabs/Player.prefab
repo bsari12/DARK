@@ -75,6 +75,37 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &1020114685701429955
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7391761223110910144}
+  m_Layer: 7
+  m_Name: WeaponStandingPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7391761223110910144
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020114685701429955}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.375, y: 0.0625, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1511205691505831619}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1186803280432837222
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,6 +181,37 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &2272128939264645771
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2659490134121320978}
+  m_Layer: 7
+  m_Name: 'WeaponCrouchPos '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2659490134121320978
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2272128939264645771}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.375, y: -0.284, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1511205691505831619}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4005884229599039586
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,6 +738,8 @@ Transform:
   - {fileID: 5225809993766484744}
   - {fileID: 6767755024207848273}
   - {fileID: 4151406154130687879}
+  - {fileID: 7391761223110910144}
+  - {fileID: 2659490134121320978}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5308997756507992851
@@ -722,7 +786,7 @@ SpriteRenderer:
   m_SortingLayerID: 1607898867
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -156010323, guid: dce81fb3456e25242abe5d7057799f82, type: 3}
+  m_Sprite: {fileID: 1546724937, guid: dce81fb3456e25242abe5d7057799f82, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -752,7 +816,10 @@ MonoBehaviour:
   facingRight: 1
   currentWeaponPrefab: {fileID: 3692754132147038037}
   currentWeaponType: 0
-  primaryWeaponPrefab: {fileID: 3692754132147038037}
+  primaryWeaponPrefab: {fileID: 0}
+  currentShootingPos: {fileID: 0}
+  standingShootPos: {fileID: 7391761223110910144}
+  crouchShootPos: {fileID: 2659490134121320978}
 --- !u!114 &7028837394293279959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1426,7 +1493,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1605005308549782243, guid: a30ff26e74c68db488e7d672488dd0a6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0625
+      value: 0.21599999
       objectReference: {fileID: 0}
     - target: {fileID: 1605005308549782243, guid: a30ff26e74c68db488e7d672488dd0a6, type: 3}
       propertyPath: m_LocalPosition.z
