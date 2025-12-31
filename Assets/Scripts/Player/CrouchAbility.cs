@@ -40,7 +40,7 @@ public class CrouchAbility : BaseAbility
     {
         if (!isPermitted || linkedStateMachine.currentState == PlayerStates.State.KnockBack || linkedStateMachine.currentState== PlayerStates.State.Death)
             return;
-        if(linkedPhysics.grounded == false || linkedStateMachine.currentState == PlayerStates.State.Dash || linkedStateMachine.currentState == PlayerStates.State.Ladders)
+        if(linkedPhysics.grounded == false || linkedStateMachine.currentState == PlayerStates.State.Dash || linkedStateMachine.currentState == PlayerStates.State.Ladders || linkedStateMachine.currentState == PlayerStates.State.Reload)
             return;
         wantToStop = false;
         linkedStateMachine.ChangeState(PlayerStates.State.Crouch);

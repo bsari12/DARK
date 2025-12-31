@@ -36,7 +36,7 @@ public class LaddersAbility : BaseAbility
             if (!isPermitted || linkedStateMachine.currentState == PlayerStates.State.KnockBack || linkedStateMachine.currentState== PlayerStates.State.Death)
                 return;
             linkedAnimator.enabled = true;
-            if(linkedStateMachine.currentState == PlayerStates.State.Ladders || linkedStateMachine.currentState == PlayerStates.State.Dash || !canGoOnLadder)
+            if(linkedStateMachine.currentState == PlayerStates.State.Ladders || linkedStateMachine.currentState == PlayerStates.State.Dash || !canGoOnLadder || linkedStateMachine.currentState == PlayerStates.State.Reload)
             {
                 return;
             }

@@ -28,7 +28,7 @@ public class IdleAbility : BaseAbility
 
     public override void UpdateAnimator()
     {
-        linkedAnimator.SetBool(idleParameterInt, linkedStateMachine.currentState == PlayerStates.State.Idle);
+        linkedAnimator.SetBool(idleParameterInt, linkedStateMachine.currentState == PlayerStates.State.Idle || linkedStateMachine.currentState == PlayerStates.State.Reload);
     }
 
 
