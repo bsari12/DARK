@@ -15,6 +15,7 @@ public class PlayerStates : MonoBehaviour
         Ladders,
         Ignore,
         KnockBack,
-        Death
+        Death,
+        Reload
     }
 }

@@ -69,7 +69,7 @@ public class Shooting : MonoBehaviour
 
     private void Shoot()
     {
-        if(currentWeapon.currentAmmo<=0)
+        if(currentWeapon.currentAmmo<=0 || currentWeapon.isReloading)
             return;
         lineRenderer.positionCount = 2;
         Vector3 direction = currentWeapon.shootingPoints.right;
