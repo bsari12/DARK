@@ -16,6 +16,7 @@ public class PlayerStates : MonoBehaviour
         Ignore,
         KnockBack,
         Death,
-        Reload
+        Reload,
+        ShootUp
     }
 }

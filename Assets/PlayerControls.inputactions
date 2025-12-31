@@ -77,6 +77,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ShootUp",
+                    "type": "Button",
+                    "id": "b1cf258d-c1fd-465c-b17d-be780b6ad894",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -473,6 +482,17 @@
                     "processors": "",
                     "groups": ";Keyboard",
                     "action": "Reload",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "52cde46b-3075-42cd-b8b2-2693ca1005e7",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard",
+                    "action": "ShootUp",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
