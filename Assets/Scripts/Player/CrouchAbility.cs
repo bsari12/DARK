@@ -33,6 +33,7 @@ public class CrouchAbility : BaseAbility
     {
         linkedPhysics.CrouchColliders();
         player.playerStats.EnableStatsCrouchCol();
+        player.SetCrouchShootPos();
     }
 
 
@@ -51,7 +52,7 @@ public class CrouchAbility : BaseAbility
         wantToStop= false;
         linkedPhysics.StandColliders();
         player.playerStats.EnableStatsStandCol();
-
+        player.SetStandShootPos();
     }
 
     private void StopCrouch(InputAction.CallbackContext value)
