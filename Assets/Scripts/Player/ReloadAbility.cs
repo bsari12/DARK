@@ -9,11 +9,12 @@ public class ReloadAbility : BaseAbility
     protected override void Initialization()
     {
         base.Initialization();
+        currentWeapon = player.currentWeaponPrefab.GetComponent<Weapon>();
     }
 
     public override void EnterAbility()
     {
-        base.EnterAbility();
+        currentWeapon = player.currentWeaponPrefab.GetComponent<Weapon>();
     }
     void OnEnable()
     {
@@ -36,8 +37,8 @@ public class ReloadAbility : BaseAbility
         if(currentWeapon.ReloadCheck()== false || currentWeapon.isReloading)
             return;
 
-            currentWeapon.Reload();
-            Shooting.OnUpdateAmmo?.Invoke(currentWeapon.currentAmmo, currentWeapon.maxAmmo, currentWeapon.storageAmmo);
+        currentWeapon.Reload();
+        Shooting.OnUpdateAmmo?.Invoke(currentWeapon.currentAmmo, currentWeapon.maxAmmo, currentWeapon.storageAmmo);
     }
 
     

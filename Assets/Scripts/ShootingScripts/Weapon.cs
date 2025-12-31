@@ -30,6 +30,7 @@ public class Weapon : MonoBehaviour
         int neededAmmo = maxAmmo - currentAmmo;
         if(neededAmmo <= 0 || storageAmmo <= 0)
             return false;
+        
         return true;
     }
 
