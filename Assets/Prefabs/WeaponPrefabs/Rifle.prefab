@@ -172,7 +172,14 @@ MonoBehaviour:
   currentAmmo: 100
   maxAmmo: 10
   storageAmmo: 15
+  reloadTime: 0
+  isReloading: 0
   shootingPoints: {fileID: 124373315569852633}
   shellSpawnPoints: {fileID: 4236305047918972311}
-  shellPrefab: {fileID: 0}
+  shellPrefab: {fileID: 2601938676368673039, guid: 05dca291cf2f1574e86d9da30d154b45, type: 3}
+  weaponIconSprite: {fileID: -6683278251990477859, guid: 3ba62af55c4254245a17d1ac7be40267, type: 3}
   visibleLineTime: 0.08
+  weaponData:
+    ID: 
+    currentAmmo: 0
+    storageAmmo: 0

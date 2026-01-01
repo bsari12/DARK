@@ -1691,6 +1691,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7201513048349421897, guid: a30ff26e74c68db488e7d672488dd0a6, type: 3}
+      propertyPath: shellPrefab
+      value: 
+      objectReference: {fileID: 2601938676368673039, guid: 05dca291cf2f1574e86d9da30d154b45, type: 3}
+    - target: {fileID: 7201513048349421897, guid: a30ff26e74c68db488e7d672488dd0a6, type: 3}
       propertyPath: storageAmmo
       value: 50
       objectReference: {fileID: 0}
@@ -1780,6 +1784,10 @@ PrefabInstance:
       propertyPath: reloadTime
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7666327562996948781, guid: 3cf30d56b48182d4e975693faa6ab7ba, type: 3}
+      propertyPath: shellPrefab
+      value: 
+      objectReference: {fileID: 3312831625925827821, guid: 6f8e0c8bdbfe3774f8997195ad5abcdc, type: 3}
     - target: {fileID: 7666327562996948781, guid: 3cf30d56b48182d4e975693faa6ab7ba, type: 3}
       propertyPath: storageAmmo
       value: 50

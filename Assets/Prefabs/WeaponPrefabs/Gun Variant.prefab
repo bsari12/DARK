@@ -77,6 +77,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7201513048349421897, guid: a30ff26e74c68db488e7d672488dd0a6, type: 3}
+      propertyPath: shellPrefab
+      value: 
+      objectReference: {fileID: 3312831625925827821, guid: 6f8e0c8bdbfe3774f8997195ad5abcdc, type: 3}
+    - target: {fileID: 7201513048349421897, guid: a30ff26e74c68db488e7d672488dd0a6, type: 3}
       propertyPath: storageAmmo
       value: 15
       objectReference: {fileID: 0}

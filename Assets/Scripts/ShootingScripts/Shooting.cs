@@ -122,6 +122,7 @@ public class Shooting : MonoBehaviour
     {
         if(currentWeapon.currentAmmo<=0 || currentWeapon.isReloading)
             return;
+        Instantiate(currentWeapon.shellPrefab, currentWeapon.shellSpawnPoints.position, currentWeapon.transform.rotation);
         lineRenderer.positionCount = 2;
         Vector3 direction = currentWeapon.shootingPoints.right;
         RaycastHit2D hitInfo = Physics2D.Raycast(currentWeapon.shootingPoints.position,direction,Mathf.Infinity,whatToHit);
