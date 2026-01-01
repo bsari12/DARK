@@ -26,6 +26,7 @@ public class Weapon : MonoBehaviour
     public Transform shellSpawnPoints;
     public GameObject shellPrefab;
     public GameObject effectPrefab;
+    public GameObject hitEffectPrefab;
     public Sprite weaponIconSprite;
 
     public float visibleLineTime;

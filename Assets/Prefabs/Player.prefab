@@ -858,6 +858,7 @@ MonoBehaviour:
   standingShootPos: {fileID: 7391761223110910144}
   crouchShootPos: {fileID: 2659490134121320978}
   upShootPos: {fileID: 1655362523857772419}
+  defaultWeaponVectorPose: {x: 0, y: 0, z: 0}
   secondaryWeaponPrefab: {fileID: 1816038793631023526}
   secondStandingShootPos: {fileID: 8891881640749185807}
   secondCrouchShootPos: {fileID: 5508241917689797141}
@@ -1683,6 +1684,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7201513048349421897, guid: a30ff26e74c68db488e7d672488dd0a6, type: 3}
+      propertyPath: recoilTime
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 7201513048349421897, guid: a30ff26e74c68db488e7d672488dd0a6, type: 3}
       propertyPath: reloadTime
       value: 1
       objectReference: {fileID: 0}
@@ -1697,6 +1702,14 @@ PrefabInstance:
     - target: {fileID: 7201513048349421897, guid: a30ff26e74c68db488e7d672488dd0a6, type: 3}
       propertyPath: storageAmmo
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7201513048349421897, guid: a30ff26e74c68db488e7d672488dd0a6, type: 3}
+      propertyPath: shootCooldown
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7201513048349421897, guid: a30ff26e74c68db488e7d672488dd0a6, type: 3}
+      propertyPath: recoilStrength
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7201513048349421897, guid: a30ff26e74c68db488e7d672488dd0a6, type: 3}
       propertyPath: weaponIconSprite
@@ -1781,6 +1794,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7666327562996948781, guid: 3cf30d56b48182d4e975693faa6ab7ba, type: 3}
+      propertyPath: recoilTime
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 7666327562996948781, guid: 3cf30d56b48182d4e975693faa6ab7ba, type: 3}
       propertyPath: reloadTime
       value: 0.5
       objectReference: {fileID: 0}
@@ -1791,6 +1808,10 @@ PrefabInstance:
     - target: {fileID: 7666327562996948781, guid: 3cf30d56b48182d4e975693faa6ab7ba, type: 3}
       propertyPath: storageAmmo
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7666327562996948781, guid: 3cf30d56b48182d4e975693faa6ab7ba, type: 3}
+      propertyPath: recoilStrength
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 8144227138611458179, guid: 3cf30d56b48182d4e975693faa6ab7ba, type: 3}
       propertyPath: m_Name

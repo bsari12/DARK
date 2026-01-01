@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -142,7 +143,11 @@ public class Shooting : MonoBehaviour
             //lineRenderer.SetPosition(0,startPoint);
             //lineRenderer.SetPosition(1, endPoint);
 
-            // hitInfo.collider.GetComponent<Clone>();
+            Vector2 normal = hitInfo.normal;
+            float angle = Mathf.Atan2(normal.y,normal.x)* Mathf.Rad2Deg;
+            Quaternion rotation = Quaternion.Euler(0,0,angle);
+            Instantiate(currentWeapon.hitEffectPrefab, hitInfo.point, rotation);
+            
             IDamageable damageableObject = hitInfo.collider.GetComponent<IDamageable>();
             if(damageableObject != null)
             {
