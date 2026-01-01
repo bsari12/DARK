@@ -171,6 +171,19 @@ public class Shooting : MonoBehaviour
         OnUpdateAmmo?.Invoke(currentWeapon.currentAmmo, currentWeapon.maxAmmo, currentWeapon.storageAmmo);
     }
 
+    public void AddStorageAmmo(string ID, int ammoToAdd)
+    {
+        foreach(Weapon weapon in player.listToSaveAndLoad)
+        {
+            if(weapon.ID == ID)
+            {
+                weapon.storageAmmo += ammoToAdd;
+                OnUpdateAllInfo?.Invoke(currentWeapon.weaponIconSprite, currentWeapon.currentAmmo, currentWeapon.maxAmmo, currentWeapon.storageAmmo);
+                break;
+            }
+        }
+    }
+
     private IEnumerator ShootDelay()
     {
         shootCooldownOver = false;
