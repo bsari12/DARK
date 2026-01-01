@@ -133,11 +133,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 5
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 0
+        width: 22
+        height: 18
+      alignment: 9
+      pivot: {x: 0.0013298036, y: 0.50541776}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -154,12 +154,12 @@ TextureImporter:
       name: Effect_Small_v2_22x18_1
       rect:
         serializedVersion: 2
-        x: 21
-        y: 3
-        width: 31
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 22
+        y: 0
+        width: 22
+        height: 18
+      alignment: 9
+      pivot: {x: 0.0013298555, y: 0.5000001}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -172,11 +172,33 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Effect_Small_v2_22x18_2
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 0
+        width: 22
+        height: 18
+      alignment: 9
+      pivot: {x: 0.0013299421, y: 0.49458244}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfb8dd15e70a56a4c9ae6770fece12c6
+      internalID: -1070857260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a07886491b1446049967c965466fbdf2
     internalID: 0
     vertices: []
     indices: 
@@ -188,6 +210,7 @@ TextureImporter:
     nameFileIdTable:
       Effect_Small_v2_22x18_0: -4141056949036181199
       Effect_Small_v2_22x18_1: -9030000423472276321
+      Effect_Small_v2_22x18_2: -1070857260
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
