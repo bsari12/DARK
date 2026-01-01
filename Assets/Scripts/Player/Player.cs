@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -14,6 +15,7 @@ public class Player : MonoBehaviour
 
     [Header("Current Weapon")]
     public GameObject currentWeaponPrefab;
+    //public Weapon currentWeapon;
     public ItemType currentWeaponType;
 
     [Header("Primary Weapon")]
@@ -26,13 +28,29 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform crouchShootPos;
     [SerializeField] private Transform upShootPos;
 
+    [Header("Secondary Weapon")]
+    public GameObject secondaryWeaponPrefab;
 
+    [Header("Secondary Weapon Positions")]
+    [SerializeField] private Transform secondStandingShootPos;
+    [SerializeField] private Transform secondCrouchShootPos;
+    [SerializeField] private Transform secondUpShootPos;
+
+    public List<Weapon> listToSaveAndLoad = new List<Weapon>();
+    
     void Awake()
     {
         stateMachine = new StateMachine();
         playerAbilities =GetComponents<BaseAbility>();
         stateMachine.arrayOfAbilities = playerAbilities;
         currentShootingPos = standingShootPos;
+    }
+    void OnDisable()
+    {
+        foreach(Weapon weapon in listToSaveAndLoad)
+        {
+            weapon.SaveWeaponData();
+        }
     }
     void Update()
     {
@@ -74,15 +92,35 @@ public class Player : MonoBehaviour
         transform.Rotate(0,180,0);
         facingRight = !facingRight;
     }
-
+    public void SetWeaponPosition()
+    {
+        if(stateMachine.currentState == PlayerStates.State.Crouch)
+        {
+            SetCrouchShootPos();
+        }
+        if(stateMachine.currentState == PlayerStates.State.ShootUp)
+        {
+            SetUpShootPos();
+        }
+        else
+        {
+            SetStandShootPos();
+        }
+    }
     public void SetStandShootPos()
     {
         if(currentWeaponType == ItemType.PrimaryWeapon)
         {
             currentShootingPos = standingShootPos;
             currentWeaponPrefab.transform.position = standingShootPos.position;
-            SetWeaponRotation(0);
+            
         }
+        else if (currentWeaponType == ItemType.SecondaryWeapon)
+        {
+            currentShootingPos = secondStandingShootPos;
+            currentWeaponPrefab.transform.position = secondStandingShootPos.position;
+        }
+        SetWeaponRotation(0);
     }
 
     public void SetCrouchShootPos()
@@ -91,8 +129,29 @@ public class Player : MonoBehaviour
         {
             currentShootingPos = crouchShootPos;
             currentWeaponPrefab.transform.position = crouchShootPos.position;
-            SetWeaponRotation(0);
+            
         }
+        else if (currentWeaponType == ItemType.SecondaryWeapon)
+        {
+            currentShootingPos = secondCrouchShootPos;
+            currentWeaponPrefab.transform.position = secondCrouchShootPos.position;
+        }
+        SetWeaponRotation(0);
+    }
+
+    public void SetUpShootPos()
+    {
+        if(currentWeaponType == ItemType.PrimaryWeapon)
+        {
+            currentShootingPos = upShootPos;
+            currentWeaponPrefab.transform.position = upShootPos.position;
+        }
+        else if (currentWeaponType == ItemType.SecondaryWeapon)
+        {
+            currentShootingPos = secondUpShootPos;
+            currentWeaponPrefab.transform.position = secondUpShootPos.position;
+        }
+        SetWeaponRotation(90);
     }
 
     public void DeactivateCurrentWeapon()
@@ -109,13 +168,5 @@ public class Player : MonoBehaviour
     {
         currentWeaponPrefab.transform.localEulerAngles = new Vector3(0,0,zRotation);
     }
-    public void SetUpShootPos()
-    {
-        if(currentWeaponType == ItemType.PrimaryWeapon)
-        {
-            currentShootingPos = upShootPos;
-            currentWeaponPrefab.transform.position = upShootPos.position;
-            SetWeaponRotation(90);
-        }
-    }
+    
 }

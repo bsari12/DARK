@@ -14,7 +14,7 @@ public class Weapon : MonoBehaviour
     public int storageAmmo;
 
     [Header("Reload")]
-    public int reloadTime;
+    public float reloadTime;
     public bool isReloading;
 
     [Header("References")]
@@ -24,6 +24,9 @@ public class Weapon : MonoBehaviour
     public Sprite weaponIconSprite;
 
     public float visibleLineTime;
+
+    [SerializeField] 
+    private WeaponData weaponData = new WeaponData();
 
     public bool ReloadCheck()
     {
@@ -43,5 +46,21 @@ public class Weapon : MonoBehaviour
         isReloading = false;
     }
 
-
+    public void SaveWeaponData()
+    {
+        weaponData.ID = ID;
+        weaponData.currentAmmo =currentAmmo;
+        weaponData.storageAmmo = storageAmmo;
+        SaveLoadManager.instance.Save(weaponData, SaveLoadManager.instance.folderName, ID + ".json");
+    }
+    public void LoadWeaponData()
+    {
+        SaveLoadManager.instance.Save(weaponData, SaveLoadManager.instance.folderName, ID + ".json");
+        if(weaponData.ID != "")
+        {
+            currentAmmo = weaponData.currentAmmo;
+            storageAmmo = weaponData.storageAmmo;
+        }
+        
+    }
 }

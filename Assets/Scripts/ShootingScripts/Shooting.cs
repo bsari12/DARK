@@ -8,6 +8,7 @@ public class Shooting : MonoBehaviour
     [Header("References")]
     public InputActionReference shootActionRef;
     public Weapon currentWeapon;
+    public InputActionReference changeweaponRef;
     private Player player;
     
     private ItemType currentWeaponType;
@@ -33,19 +34,30 @@ public class Shooting : MonoBehaviour
     void Start()
     {
         currentWeapon = player.currentWeaponPrefab.GetComponent<Weapon>();
+        LoadWeapons();
         OnUpdateAllInfo?.Invoke(currentWeapon.weaponIconSprite,currentWeapon.currentAmmo, currentWeapon.maxAmmo, currentWeapon.storageAmmo);
     }
 
+    private void LoadWeapons()
+    {
+        foreach(Weapon weapon in player.listToSaveAndLoad)
+        {
+            weapon.LoadWeaponData();
+        }
+    }
     void OnEnable()
     {
         shootActionRef.action.performed += TryToShoot;
         shootActionRef.action.canceled += StopShooting;
+        changeweaponRef.action.performed += TryToChangeWeapon;
     }
     void OnDisable()
     {
         shootActionRef.action.performed -= TryToShoot;
         shootActionRef.action.canceled -= StopShooting;
+        changeweaponRef.action.performed -= TryToChangeWeapon;
     }
+
     private void TryToShoot(InputAction.CallbackContext value)
     {
         if(currentWeapon == null || player.stateMachine.currentState==PlayerStates.State.Ladders || player.stateMachine.currentState ==   PlayerStates.State.Dash || player.stateMachine.currentState == PlayerStates.State.WallSlide || player.stateMachine.currentState == PlayerStates.State.KnockBack)
@@ -65,6 +77,45 @@ public class Shooting : MonoBehaviour
     private void StopShooting(InputAction.CallbackContext value)
     {
         shootButtonHeld = false;
+    }
+
+    private void TryToChangeWeapon(InputAction.CallbackContext value)
+    {
+        if(currentWeapon == null || player.stateMachine.currentState==PlayerStates.State.Ladders || player.stateMachine.currentState ==   PlayerStates.State.Dash || player.stateMachine.currentState == PlayerStates.State.WallSlide || player.stateMachine.currentState == PlayerStates.State.KnockBack)
+            return;
+        
+        if(currentWeapon.isReloading)
+            return;
+        
+        if(currentWeapon.itemType == ItemType.PrimaryWeapon)
+        {
+            if(player.secondaryWeaponPrefab == null)
+                return;
+            
+            player.primaryWeaponPrefab.SetActive(false);
+            player.secondaryWeaponPrefab.SetActive(true);
+            player.currentWeaponPrefab = player.secondaryWeaponPrefab;
+            currentWeaponType = ItemType.SecondaryWeapon;
+            player.currentWeaponType = currentWeaponType;
+            currentWeapon = player.currentWeaponPrefab.GetComponent<Weapon>();
+            player.anim.SetLayerWeight(1,1);
+            player.SetWeaponPosition();
+        }
+        else
+        {
+            if(player.primaryWeaponPrefab == null)
+                return;
+            
+            player.primaryWeaponPrefab.SetActive(true);
+            player.secondaryWeaponPrefab.SetActive(false);
+            player.currentWeaponPrefab = player.primaryWeaponPrefab;
+            currentWeaponType = ItemType.PrimaryWeapon;
+            player.currentWeaponType = currentWeaponType;
+            currentWeapon = player.currentWeaponPrefab.GetComponent<Weapon>();
+            player.anim.SetLayerWeight(1,0);
+            player.SetWeaponPosition();
+        }
+        OnUpdateAllInfo?.Invoke(currentWeapon.weaponIconSprite,currentWeapon.currentAmmo, currentWeapon.maxAmmo, currentWeapon.storageAmmo);
     }
 
     private void Shoot()
