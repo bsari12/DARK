@@ -1356,9 +1356,7 @@ LineRenderer:
   m_SortingLayerID: 1607898867
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Positions:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1}
+  m_Positions: []
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -1367,7 +1365,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.06
+        value: 1
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1712,6 +1710,14 @@ PrefabInstance:
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7201513048349421897, guid: a30ff26e74c68db488e7d672488dd0a6, type: 3}
+      propertyPath: visibleLineTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7201513048349421897, guid: a30ff26e74c68db488e7d672488dd0a6, type: 3}
+      propertyPath: widthMultiplier
+      value: 0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 7201513048349421897, guid: a30ff26e74c68db488e7d672488dd0a6, type: 3}
       propertyPath: weaponIconSprite
       value: 
       objectReference: {fileID: -6683278251990477859, guid: 3ba62af55c4254245a17d1ac7be40267, type: 3}
@@ -1811,6 +1817,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7666327562996948781, guid: 3cf30d56b48182d4e975693faa6ab7ba, type: 3}
       propertyPath: recoilStrength
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7666327562996948781, guid: 3cf30d56b48182d4e975693faa6ab7ba, type: 3}
+      propertyPath: widthMultiplier
       value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 8144227138611458179, guid: 3cf30d56b48182d4e975693faa6ab7ba, type: 3}

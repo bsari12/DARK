@@ -29,7 +29,9 @@ public class Weapon : MonoBehaviour
     public GameObject hitEffectPrefab;
     public Sprite weaponIconSprite;
 
+    [Header("LineRenderer")]
     public float visibleLineTime;
+    public float widthMultiplier;
 
     [SerializeField] 
     private WeaponData weaponData = new WeaponData();
