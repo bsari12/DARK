@@ -126,6 +126,12 @@ public class Shooting : MonoBehaviour
         Instantiate(currentWeapon.shellPrefab, currentWeapon.shellSpawnPoints.position, currentWeapon.transform.rotation);
         currentWeapon.effectPrefab.transform.position = currentWeapon.shootingPoints.position;
         currentWeapon.effectPrefab.SetActive(true);
+
+        if(player.stateMachine.currentState!=PlayerStates.State.ShootUp)
+            currentWeapon.transform.localPosition = player.defaultWeaponVectorPose - Vector3.right*currentWeapon.recoilStrength;
+        else
+            currentWeapon.transform.localPosition = player.defaultWeaponVectorPose - Vector3.up*currentWeapon.recoilStrength;
+
         lineRenderer.positionCount = 2;
         Vector3 direction = currentWeapon.shootingPoints.right;
         RaycastHit2D hitInfo = Physics2D.Raycast(currentWeapon.shootingPoints.position,direction,Mathf.Infinity,whatToHit);
@@ -162,7 +168,9 @@ public class Shooting : MonoBehaviour
     private IEnumerator ShootDelay()
     {
         shootCooldownOver = false;
-        yield return new WaitForSeconds(currentWeapon.shootCooldown);
+        yield return new WaitForSeconds(currentWeapon.recoilTime);
+        currentWeapon.transform.localPosition = player.defaultWeaponVectorPose;
+        yield return new WaitForSeconds(currentWeapon.shootCooldown-currentWeapon.recoilTime);
         shootCooldownOver = true;
     }
     private IEnumerator ResetShootLine()

@@ -17,6 +17,10 @@ public class Weapon : MonoBehaviour
     public float reloadTime;
     public bool isReloading;
 
+    [Header("Recoil")]
+    public float recoilStrength;
+    public float recoilTime;
+
     [Header("References")]
     public Transform shootingPoints;
     public Transform shellSpawnPoints;
