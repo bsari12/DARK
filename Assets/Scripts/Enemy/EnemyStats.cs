@@ -4,6 +4,7 @@ using UnityEngine;
 public class EnemyStats : MonoBehaviour
 {
     [SerializeField] protected float health;
+    [SerializeField] protected float maxHealth;
 
     [Header("Flash")]
     [SerializeField] private float flashDuration;
