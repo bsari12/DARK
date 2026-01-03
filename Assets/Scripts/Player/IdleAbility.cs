@@ -25,6 +25,10 @@ public class IdleAbility : BaseAbility
             linkedStateMachine.ChangeState(PlayerStates.State.Run);
         }
     }
+    public override void ProcessFixedAbility()
+    {
+        linkedPhysics.rb.linearVelocityX = 0;
+    }
 
     public override void UpdateAnimator()
     {
