@@ -149,8 +149,15 @@ public class Shooting : MonoBehaviour
             Quaternion rotation = Quaternion.Euler(0,0,angle);
             Instantiate(currentWeapon.hitEffectPrefab, hitInfo.point, rotation);
             
+            EnemyStats enemyStats = hitInfo.collider.GetComponent<EnemyStats>();
             IDamageable damageableObject = hitInfo.collider.GetComponent<IDamageable>();
-            if(damageableObject != null)
+
+            if(enemyStats != null)
+            {
+                enemyStats.TakeDamage(currentWeapon.damage);
+            }
+
+            else if(damageableObject != null)
             {
                 damageableObject.TakeDamage(currentWeapon.damage);
             }
