@@ -28,6 +28,12 @@ public class FirstBossStateMachine : BossStateMachine
     private float meleeAttackTimer;
 
 
+    [Header("RANGE ATTACK STATE")]
+    [SerializeField] private string attackRangeAnimationName;
+    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private Transform shootingPoint;
+
+
     void Start()
     {
         player = FindAnyObjectByType<Player>();
@@ -88,7 +94,7 @@ public class FirstBossStateMachine : BossStateMachine
 
         else if (teleportStateTimer <= 0)
         {
-            ChangeState(BossState.Idle);
+            ChangeState(BossState.RangeAttack);
         }
 
     }
@@ -144,5 +150,24 @@ public class FirstBossStateMachine : BossStateMachine
     }
 
     #endregion
+
+    #region RANGE ATTACK
+
+    public override void EnterRangeAttack()
+    {
+        anim.Play(attackRangeAnimationName);
+    }
+
+    public void SpawnBossProjectile()
+    {
+        BossProjectile projectile = Instantiate(projectilePrefab, shootingPoint.position, transform.rotation).GetComponent<BossProjectile>();
+        if(player != null)
+            projectile.MoveProjectile(player.transform);
+        else
+            Destroy(projectile.gameObject);
+    }
+
+    #endregion
+
 
 }
