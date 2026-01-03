@@ -8,8 +8,9 @@ public class DeathAbility : BaseAbility
         SpawnMode.spawnFromCheckPoint = true;
         player.gatherInput.DisablePlayerMap();
         linkedPhysics.ResetVelocity();
-        if(linkedPhysics.grounded)
-            linkedAnimator.SetBool("Death", true);
+
+        linkedAnimator.SetBool("Death", true);
+        
         Invoke(nameof(ResetGame), 2f);
         player.DeactivateCurrentWeapon();
     }

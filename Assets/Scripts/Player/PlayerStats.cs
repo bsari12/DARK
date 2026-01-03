@@ -42,8 +42,8 @@ public class PlayerStats : MonoBehaviour
         if(currentHealth <= 0)
         {
             DisableStatsCollider();
-            if(player.stateMachine.currentState != PlayerStates.State.KnockBack)
-                player.stateMachine.ChangeState(PlayerStates.State.Death);
+            //if(player.stateMachine.currentState != PlayerStates.State.KnockBack)
+            player.stateMachine.ChangeState(PlayerStates.State.Death);
         }
     }
     private IEnumerator Flash()

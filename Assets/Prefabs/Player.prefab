@@ -530,7 +530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 907dada19b41a2d4f9ba5c4325f3dba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2
+  maxHealth: 5
   player: {fileID: 2100567674786411706}
   healthBarControl: {fileID: 0}
   flashDuration: 0.2
@@ -913,7 +913,7 @@ MonoBehaviour:
   changeweaponRef: {fileID: 44815332303283840, guid: 1939ffe5cf0e21142bb43660c19c8e28, type: 3}
   whatToHit:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 32832
   lineRenderer: {fileID: 1079821219334041460}
 --- !u!114 &1036435708861347739
 MonoBehaviour:

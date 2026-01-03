@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PatrollingStateMachine : EnemySimpleStateMachine
@@ -37,8 +38,16 @@ public class PatrollingStateMachine : EnemySimpleStateMachine
 
     public override void UpdateIdle()
     {
+        if (patrollPhysics.playerBehind)
+        {
+            ForceFlip();
+            speed *= -1;
+            turnCooldown = minimumTurnDelay;
+            ChangeState(EnemyState.Move);
+        }
+
         idleStateTimer -= Time.deltaTime;
-        if(idleStateTimer <= 0)
+        if(idleStateTimer <= 0 || patrollPhysics.playerAhead)
         {
             ChangeState(EnemyState.Move);
         }
@@ -68,12 +77,21 @@ public class PatrollingStateMachine : EnemySimpleStateMachine
     public override void UpdateMove()
     {
         moveStateTimer-= Time.deltaTime;
-        if(moveStateTimer <=0)
+        if(moveStateTimer <=0 && patrollPhysics.playerAhead == false)
             ChangeState(EnemyState.Idle);
 
         if(turnCooldown > 0)
             turnCooldown -=Time.deltaTime;
-            
+        
+        if(patrollPhysics.playerBehind && turnCooldown <= 0)
+        {
+            ForceFlip();
+            speed*= -1;
+            turnCooldown = minimumTurnDelay;
+            return;
+        }
+
+
         if(patrollPhysics.wallDetected || patrollPhysics.groundDetected == false)
         {
             if(turnCooldown > 0)
@@ -102,6 +120,7 @@ public class PatrollingStateMachine : EnemySimpleStateMachine
     {
         anim.Play(attackAnimationName);
         patrollPhysics.NegateForces();
+        patrollPhysics.canCheckBehind = false;
     }
 
     public void EndOfAttack()
@@ -114,7 +133,15 @@ public class PatrollingStateMachine : EnemySimpleStateMachine
         {
             ChangeState(previousState);
         }
+        StartCoroutine(CheckBehindDelay());
     }
+
+    IEnumerator CheckBehindDelay()
+    {
+        yield return new WaitForSeconds(0.3f);
+        patrollPhysics.canCheckBehind = true;
+    }
+
     #endregion
 
     #region DEATH
