@@ -22,10 +22,17 @@ public class FirstBossStateMachine : BossStateMachine
     private int lastTeleportIndex;
     private bool canCheckTeleportInfo;
 
+    [Header("ATTACK STATE")]
+    [SerializeField] private string attackAnimationName;
+    [SerializeField] private float attackMeleeCooldownTimer;
+    private float meleeAttackTimer;
+
+
     void Start()
     {
         player = FindAnyObjectByType<Player>();
     }
+
     #region IDLE
     public override void EnterIdle()
     {
@@ -35,6 +42,16 @@ public class FirstBossStateMachine : BossStateMachine
 
     public override void UpdateIdle()
     {
+        meleeAttackTimer -= Time.deltaTime;
+        if(bossPhysics.inAttackRange)
+        {
+            if(meleeAttackTimer <= 0)
+                ChangeState(BossState.Attack);
+
+            return;
+        }
+
+
         idleStateTimer -= Time.deltaTime;
         if(idleStateTimer <= 0)
         {
@@ -66,8 +83,9 @@ public class FirstBossStateMachine : BossStateMachine
         teleportStateTimer -= Time.deltaTime;
         if (bossPhysics.inAttackRange)
         {
-            ChangeState(BossState.Idle);
+            ChangeState(BossState.Attack);
         }
+
         else if (teleportStateTimer <= 0)
         {
             ChangeState(BossState.Idle);
@@ -106,6 +124,25 @@ public class FirstBossStateMachine : BossStateMachine
 
     #endregion
 
+    #region ATTACK
 
+    public override void EnterAttack()
+    {
+        anim.Play(attackAnimationName);
+        bossPhysics.DisableDetectionCol();
+        bossPhysics.inAttackRange = false;
+    }
+
+    public override void ExitAttack()
+    {
+        meleeAttackTimer = attackMeleeCooldownTimer;
+    }
+
+    public void ChangeStateToIdle()
+    {
+        ChangeState(BossState.Idle);
+    }
+
+    #endregion
 
 }
