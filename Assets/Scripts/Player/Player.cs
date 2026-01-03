@@ -64,7 +64,8 @@ public class Player : MonoBehaviour
             }
             ability.UpdateAnimator();
         }
-        Debug.Log("Current state is: "+ stateMachine.currentState);
+        Flip();
+        //Debug.Log("Current state is: "+ stateMachine.currentState);
     }
     void FixedUpdate()
     {
