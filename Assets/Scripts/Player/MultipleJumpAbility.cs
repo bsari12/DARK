@@ -105,6 +105,7 @@ public class MultipleJumpAbility : BaseAbility
             numberOfJumps = maxNumberOfJumps;
             canActivateAdditionalJumps = true;
             numberOfJumps  -= 1;
+            source.PlayOneShot(audioClip);
             return;
         }
 
@@ -120,6 +121,8 @@ public class MultipleJumpAbility : BaseAbility
         
             canActivateAdditionalJumps = true;
             numberOfJumps  -= 1;
+            source.PlayOneShot(audioClip);
+            
             return;
         }
         if(numberOfJumps >0 && canActivateAdditionalJumps)
@@ -133,6 +136,7 @@ public class MultipleJumpAbility : BaseAbility
             jumpTimer = setMaxJumpTime;
         
             numberOfJumps  -= 1;
+            source.PlayOneShot(audioClip);
         }
         else
         {

@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
@@ -32,6 +33,9 @@ public class Weapon : MonoBehaviour
     [Header("LineRenderer")]
     public float visibleLineTime;
     public float widthMultiplier;
+
+    [Header("Audio")]
+    public AudioSource source;
 
     [SerializeField] 
     private WeaponData weaponData = new WeaponData();

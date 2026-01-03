@@ -7,7 +7,8 @@ public class BaseAbility : MonoBehaviour
     protected StateMachine linkedStateMachine;
     protected PhysicsControl linkedPhysics;
     protected Animator linkedAnimator;
-
+    [SerializeField] protected AudioSource source;
+    [SerializeField] protected AudioClip audioClip;
 
 
     public PlayerStates.State thisAbilityState;
