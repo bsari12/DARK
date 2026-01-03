@@ -18,10 +18,28 @@ public class PatrollPhysics : MonoBehaviour
     [SerializeField] private PolygonCollider2D statsCol;
     public bool inAttackRange;
 
+    [Header("Player Ahead")]
+    [SerializeField] private Transform frontCheckPoint;
+    [SerializeField] private float rayFrontCheckLength;
+    public bool playerAhead;
+
+    [Header("Player Behing")]
+    [SerializeField] private Transform backCheckPoint;
+    [SerializeField] private float rayBehindCheckLength;
+    public bool playerBehind;
+    public bool canCheckBehind = true;
+    [SerializeField] private LayerMask playerDetectMask;
+
     private void FixedUpdate()
     {
         groundDetected = Physics2D.OverlapCircle(groundCheckPoint.position, checkRadius, whatToDetect);
         wallDetected = Physics2D.OverlapCircle(wallCheckPoint.position, checkRadius, whatToDetect);
+        playerAhead = Physics2D.Raycast(frontCheckPoint.position, transform.right, rayFrontCheckLength, playerDetectMask);
+        if (canCheckBehind)
+        {
+            playerBehind = Physics2D.Raycast(backCheckPoint.position, transform.right * (-1), rayBehindCheckLength, playerDetectMask);
+        }
+
     }
 
 
@@ -29,6 +47,8 @@ public class PatrollPhysics : MonoBehaviour
     {
         Gizmos.DrawWireSphere(groundCheckPoint.position, checkRadius);
         Gizmos.DrawWireSphere(wallCheckPoint.position, checkRadius);	
+        Gizmos.DrawLine(frontCheckPoint.position, frontCheckPoint.position + transform.right * rayFrontCheckLength);
+        Gizmos.DrawLine(backCheckPoint.position, backCheckPoint.position + transform.right * (-1) * rayBehindCheckLength);
     }
 
     public void NegateForces()
