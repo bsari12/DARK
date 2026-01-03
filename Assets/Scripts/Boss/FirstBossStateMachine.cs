@@ -27,11 +27,14 @@ public class FirstBossStateMachine : BossStateMachine
     [SerializeField] private float attackMeleeCooldownTimer;
     private float meleeAttackTimer;
 
-
     [Header("RANGE ATTACK STATE")]
     [SerializeField] private string attackRangeAnimationName;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform shootingPoint;
+
+    [Header("DEATH STATE")]
+    [SerializeField] private string deathAnimationName;
+    [SerializeField] private GameObject headPrefab;
 
 
     void Start()
@@ -169,5 +172,20 @@ public class FirstBossStateMachine : BossStateMachine
 
     #endregion
 
+    #region DEATH
+
+    public override void EnterDeath()
+    {
+        anim.Play(deathAnimationName);
+        bossPhysics.DisableAllColliders();
+    }
+
+    public void DeathAnimationEvent()
+    {
+        Instantiate(headPrefab, transform.position,transform.rotation);
+        gameObject.SetActive(false);
+    }
+
+    #endregion
 
 }
