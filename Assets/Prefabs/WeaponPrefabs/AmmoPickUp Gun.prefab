@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3854714596239958256, guid: 9acb6629c9471b44c82414166754102d, type: 3}
       propertyPath: m_Name
-      value: AmmoPickUp Gun Variant
+      value: AmmoPickUp Gun
       objectReference: {fileID: 0}
     - target: {fileID: 7322504009847950394, guid: 9acb6629c9471b44c82414166754102d, type: 3}
       propertyPath: m_Sprite
