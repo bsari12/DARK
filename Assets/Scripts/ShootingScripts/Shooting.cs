@@ -135,6 +135,7 @@ public class Shooting : MonoBehaviour
 
         lineRenderer.positionCount = 2;
         lineRenderer.widthMultiplier = currentWeapon.widthMultiplier;
+        
         Vector3 direction = currentWeapon.shootingPoints.right;
         RaycastHit2D hitInfo = Physics2D.Raycast(currentWeapon.shootingPoints.position,direction,Mathf.Infinity,whatToHit);
         if (hitInfo)
