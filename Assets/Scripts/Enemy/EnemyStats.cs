@@ -14,10 +14,12 @@ public class EnemyStats : MonoBehaviour
     [SerializeField] private SpriteRenderer spriter;
 
     protected Coroutine damageCoroutine;
+    private Material flashMatInstance;
 
     void Start()
     {
         defaultMaterial = spriter.material;
+        flashMatInstance = new Material(flashMaterial);
     }
 
     public void TakeDamage(float damage)
@@ -49,9 +51,9 @@ public class EnemyStats : MonoBehaviour
     private IEnumerator Flash()
     {
 
-        spriter.material = flashMaterial;
-        flashMaterial.SetColor("_FlashColor", flashCol);
-        flashMaterial.SetFloat("_FlashAmount", flashStrength);
+        spriter.material = flashMatInstance;
+        flashMatInstance.SetColor("_FlashColor", flashCol);
+        flashMatInstance.SetFloat("_FlashAmount", flashStrength);
         yield return new WaitForSeconds(flashDuration);
         spriter.material = defaultMaterial;
         damageCoroutine = null;
