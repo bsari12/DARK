@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
 {
-    [SerializeField] protected EnemySimpleStateMachine enemyStateMachine;
     [SerializeField] protected float health;
 
     [Header("Flash")]
